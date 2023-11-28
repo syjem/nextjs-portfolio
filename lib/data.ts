@@ -1,10 +1,19 @@
 import React from 'react';
-import { CgWorkAlt } from 'react-icons/cg';
-import { FaReact } from 'react-icons/fa';
-import { LuGraduationCap } from 'react-icons/lu';
+
 import project1 from '@/public/project-1.jpg';
 import project2 from '@/public/project-2.png';
 import project3 from '@/public/project-3.jpg';
+import html from '@/public/icons8-html.svg';
+import css from '@/public/icons8-css.svg';
+import javascript from '@/public/icons8-javascript.svg';
+import react from '@/public/icons8-react-native.svg';
+import sass from '@/public/icons8-sass.svg';
+import next from '@/public/icons8-nextjs.svg';
+import tailwind from '@/public/icons8-tailwind-css.svg';
+import typescript from '@/public/icons8-typescript.svg';
+import flask from '@/public/icons8-flask.svg';
+import python from '@/public/icons8-python.svg';
+import postgresql from '@/public/icons8-postgresql.svg';
 
 export const links = [
   {
@@ -12,8 +21,8 @@ export const links = [
     hash: '#home',
   },
   {
-    name: 'About',
-    hash: '#about',
+    name: 'Skills',
+    hash: '#skills',
   },
   {
     name: 'Projects',
@@ -22,33 +31,6 @@ export const links = [
   {
     name: 'Contact',
     hash: '#contact',
-  },
-] as const;
-
-export const experiencesData = [
-  {
-    title: 'Graduated bootcamp',
-    location: 'Miami, FL',
-    description:
-      'I graduated after 6 months of studying. I immediately found a job as a front-end developer.',
-    icon: React.createElement(LuGraduationCap),
-    date: '2019',
-  },
-  {
-    title: 'Front-End Developer',
-    location: 'Orlando, FL',
-    description:
-      'I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.',
-    icon: React.createElement(CgWorkAlt),
-    date: '2019 - 2021',
-  },
-  {
-    title: 'Full-Stack Developer',
-    location: 'Houston, TX',
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: '2021 - present',
   },
 ] as const;
 
@@ -76,24 +58,54 @@ export const projectsData = [
   },
 ] as const;
 
+type skillsType = {
+  name: string;
+  icon: any;
+};
+
 export const skillsData = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Git',
-  'Tailwind',
-  'Prisma',
-  'MongoDB',
-  'Redux',
-  'GraphQL',
-  'Apollo',
-  'Express',
-  'PostgreSQL',
-  'Python',
-  'Django',
-  'Framer Motion',
+  {
+    name: 'HTML',
+    icon: html,
+  },
+  {
+    name: 'CSS',
+    icon: css,
+  },
+  {
+    name: 'JavaScript',
+    icon: javascript,
+  },
+  {
+    name: 'React',
+    icon: react,
+  },
+  {
+    name: 'TypeScript',
+    icon: typescript,
+  },
+  {
+    name: 'Next Js',
+    icon: next,
+  },
+  {
+    name: 'SASS',
+    icon: sass,
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: tailwind,
+  },
+  {
+    name: 'Python',
+    icon: python,
+  },
+  {
+    name: 'Flask',
+    icon: flask,
+  },
+  {
+    name: 'PostgreSQL',
+    icon: postgresql,
+  },
 ] as const;
