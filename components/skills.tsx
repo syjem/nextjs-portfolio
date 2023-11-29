@@ -1,33 +1,55 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import { Outfit } from 'next/font/google';
+import { motion } from 'framer-motion';
 import { skillsData } from '@/lib/data';
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
+import { Outfit } from 'next/font/google';
+import { useSectionInView } from '@/hooks/useSectionInView';
 
 export const outfit = Outfit({ subsets: ['latin'] });
 
 const SkillSection = () => {
-  const { ref, inView } = useInView();
-  const { setActiveSection } = useActiveSectionContext();
+  const { ref } = useSectionInView('Skills');
 
-  useEffect(() => {
-    if (inView) {
-      setActiveSection('Skills');
-    }
-  }, [inView, setActiveSection]);
+  const fadeInAnimation = {
+    initial: {
+      opacity: 0,
+      y: 100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.05 * index,
+      },
+    }),
+  };
 
   return (
     <section
       ref={ref}
       id="skills"
-      className="pt-10 max-w-[1440px] mx-auto mt-4 sm:mt-32 px-4">
-      <h2 className="text-center text-2xl my-4">Skills Set</h2>
-      <div className="flex gap-4 flex-wrap justify-center w-ful sm:w-3/4 mx-auto py-2 px-4 rounded-md">
-        {skillsData.map((skill) => (
-          <div key={skill.name} className="flex flex-col gap-1 items-center">
+      className="pt-10 w-full max-w-5xl mx-auto mt-4 sm:mt-20 scroll-mt-24 px-4">
+      <motion.h2
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
+        className="text-center text-2xl my-4">
+        Skills Set
+      </motion.h2>
+
+      <ul className="w-full max-w-full flex overflow-x-auto gap-4 sm:flex-wrap justify-center sm:w-3/4 mx-auto py-2 px-4 rounded-md">
+        {skillsData.map((skill, index) => (
+          <motion.li
+            key={skill.name}
+            className="flex flex-col gap-1 items-center"
+            variants={fadeInAnimation}
+            initial="initial"
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            custom={index}>
             <Image
               src={skill.icon}
               alt={`${skill.name}'s logo`}
@@ -37,9 +59,9 @@ const SkillSection = () => {
             <span className={`${outfit.className} text-slate-100`}>
               {skill.name}
             </span>
-          </div>
+          </motion.li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

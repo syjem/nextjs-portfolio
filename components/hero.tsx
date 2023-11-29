@@ -1,28 +1,21 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import React, { useEffect } from 'react';
 import { BsDownload } from 'react-icons/bs';
 import { IoLogoGithub } from 'react-icons/io';
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
+import { useSectionInView } from '@/hooks/useSectionInView';
 
 const HeroSection = () => {
-  const { ref, inView } = useInView();
-  const { setActiveSection } = useActiveSectionContext();
+  const { ref } = useSectionInView('Home', 0.5);
 
-  useEffect(() => {
-    if (inView) {
-      setActiveSection('Home');
-    }
-  }, [inView, setActiveSection]);
   return (
     <section
       ref={ref}
       id="home"
-      className="max-w-[1440px] mx-auto pt-8 sm:pt-20 px-4">
+      className="w-full max-w-5xl mx-auto pt-8 sm:pt-20 scroll-mt-24 px-4">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="relative space-x-8 h-32 w-32 xs:h-56 xs:w-56 rounded-full shrink-0">
           <motion.div

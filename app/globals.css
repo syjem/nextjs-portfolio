@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.label {
+  @apply text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+}
+
+.text-input {
+  @apply flex h-10 w-full rounded-md border border-fuchsia-200 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-fuchsia-300 dark:bg-slate-950 dark:ring-offset-fuchsia-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-fuchsia-950 dark:focus-visible:border-fuchsia-100;
+}
+
+.text-area {
+  @apply flex min-h-[80px] w-full rounded-sm border border-fuchsia-200 bg-white px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus:border-fuchsia-200 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-fuchsia-300 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-fuchsia-950;
+}

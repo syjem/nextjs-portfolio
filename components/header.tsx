@@ -27,9 +27,9 @@ const Header = () => {
                 href={link.hash}
                 onClick={() => setActiveSection(link.name)}
                 className={clsx(
-                  'text-slate-400 hover:text-slate-50 transition',
+                  'text-slate-400 hover:text-fuchsia-500 transition',
                   {
-                    'font-semibold text-fuchsia-600 hover:text-fuchsia-500':
+                    'font-semibold !text-fuchsia-600 hover:!text-fuchsia-500':
                       activeSection === link.name,
                   }
                 )}>
