@@ -19,7 +19,7 @@ const ContactSection = () => {
           <motion.h2
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
-            className="text-center text-xl md:text-5xl font-bold text-fuchsia-50">
+            className="text-center text-2xl md:text-5xl font-bold text-fuchsia-50">
             Contact
           </motion.h2>
           <p className="text-center text-slate-500 text-sm mb-6">
