@@ -8,24 +8,27 @@ import { motion } from 'framer-motion';
 import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
 
 const Header = () => {
-  const { activeSection, setActiveSection } = useActiveSectionContext();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="z-50 sticky top-0 xs:top-4 max-w-lg mx-auto rounded-none xs:rounded-full xs:border overflow-hidden border-fuchsia-900 shadow-lg backdrop-blur-[0.5rem] bg-slate-950 bg-opacity-80 ">
-      <nav className="p-1">
+      className="z-50 h-16 xs:h-auto sticky top-0 xs:top-4 max-w-lg mx-auto rounded-none xs:rounded-full xs:border overflow-hidden border-fuchsia-900 shadow-lg backdrop-blur-[0.5rem] bg-slate-950 bg-opacity-80">
+      <nav className="p-1 h-full flex items-center justify-center">
         <ul className="flex space-x-4 justify-center">
           {links.map((link) => (
             <motion.li
               key={link.name}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="px-2 xs:px-4 py-2 text-sm xs:text-base relative">
+              className="px-2 xs:px-4 py-2 text-sm sm:text-base relative">
               <Link
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name), setTimeOfLastClick(Date.now());
+                }}
                 className={clsx(
                   'text-slate-400 hover:text-fuchsia-500 transition',
                   {

@@ -7,15 +7,17 @@ import { motion } from 'framer-motion';
 import { BsDownload } from 'react-icons/bs';
 import { IoLogoGithub } from 'react-icons/io';
 import { useSectionInView } from '@/hooks/useSectionInView';
+import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
 
 const HeroSection = () => {
   const { ref } = useSectionInView('Home', 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
       ref={ref}
       id="home"
-      className="w-full max-w-5xl mx-auto pt-8 sm:pt-20 scroll-mt-24 px-4">
+      className="w-full max-w-5xl mx-auto pt-8 sm:pt-20 scroll-mt-24 px-4 pb-20 md:pb-4">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="relative space-x-8 h-32 w-32 xs:h-56 xs:w-56 rounded-full shrink-0">
           <motion.div
@@ -73,8 +75,11 @@ const HeroSection = () => {
           delay: 0.1,
         }}>
         <Link
-          className="py-2 px-4 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-sky-500 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-sky-600 bg-fuchsia-900 text-slate-50 hover:bg-fuchsia-900/90 focus:scale-105 hover:scale-105 active:scale-100 border-[2px] dark:border-fuchsia-800"
-          href="#contact">
+          className="contact-me"
+          href="#contact"
+          onClick={() => {
+            setActiveSection('Contact'), setTimeOfLastClick(Date.now());
+          }}>
           Contact Me
         </Link>
         <a
@@ -82,7 +87,7 @@ const HeroSection = () => {
           href="/updated-resume.pdf"
           tabIndex={0}
           title="Download resume"
-          className="gap-2 cursor-pointer py-2 px-4 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-sky-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-sky-500 border-[2px] hover:text-slate-900 dark:border-fuchsia-800 dark:bg-slate-950 dark:hover:bg-slate-950/100 dark:hover:text-slate-50 focus:scale-105 hover:scale-105 active:scale-100">
+          className="resume">
           Resume
           <BsDownload className="h-4 w-4 text-slate-300" />
         </a>
