@@ -62,7 +62,7 @@ const HeroSection = () => {
             Full Stack Developer
           </h1>
           <p className="text-fuchsia-500 text-base text-center">
-            with specialized skills & knowledge in all stages of web
+            with specialized knowledge & skills in all stages of web
             development.
           </p>
         </motion.div>
