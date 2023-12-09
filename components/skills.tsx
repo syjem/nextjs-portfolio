@@ -38,7 +38,7 @@ const SkillSection = () => {
         Skills Set
       </motion.h2>
 
-      <motion.div className="max-w-[600px] lg:max-w-full mx-auto overflow-hidden lg:overflow-visible border border-lime-500">
+      <motion.div className="max-w-[600px] lg:max-w-full mx-auto overflow-hidden lg:overflow-visible">
         <ul className="w-full flex gap-4 lg:flex-wrap justify-center sm:w-3/4 mx-auto py-2 px-4 rounded-md">
           {skillsData.map((skill, index) => (
             <motion.li
