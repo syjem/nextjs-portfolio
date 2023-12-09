@@ -8,7 +8,7 @@ import css from '@/public/icons8-css.svg';
 import javascript from '@/public/icons8-javascript.svg';
 import react from '@/public/icons8-react-native.svg';
 import sass from '@/public/icons8-sass.svg';
-import next from '@/public/icons8-nextjs.svg';
+import next from '@/public/next-icon.ico';
 import tailwind from '@/public/icons8-tailwind-css.svg';
 import typescript from '@/public/icons8-typescript.svg';
 import flask from '@/public/icons8-flask.svg';

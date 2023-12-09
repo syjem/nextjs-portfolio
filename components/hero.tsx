@@ -36,7 +36,7 @@ const HeroSection = () => {
             />
           </motion.div>
           <motion.div
-            className="group flex items-center gap-1 absolute right-0 hover:shadow-lg hover:-right-[7.3rem] bottom-3 xs:bottom-10 cursor-pointer text-slate-50 bg-gray-950 border border-slate-400 rounded-full"
+            className="group flex items-center gap-1 absolute right-0 hover:shadow-lg hover:-right-[109px] bottom-3 xs:bottom-10 cursor-pointer text-slate-50 bg-gray-950 border border-slate-400 rounded-full"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -49,7 +49,7 @@ const HeroSection = () => {
             <Link
               href="https://github.com/syjem"
               target="_blank"
-              className="w-full hidden group-hover:block text-slate-200 xs:text-blue-500 text-sm pr-2">
+              className="w-full hidden group-hover:block text-blue-500 text-sm pr-2">
               Jemuel Repoylo
             </Link>
           </motion.div>

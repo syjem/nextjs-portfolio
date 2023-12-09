@@ -38,32 +38,34 @@ const SkillSection = () => {
         Skills Set
       </motion.h2>
 
-      <ul className="w-full flex gap-4 flex-wrap justify-center sm:w-3/4 mx-auto py-2 px-4 rounded-md">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            key={skill.name}
-            className="flex flex-col gap-1 items-center"
-            variants={fadeInAnimation}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}>
-            <Image
-              src={skill.icon}
-              alt={`${skill.name}'s logo`}
-              width={40}
-              height={40}
-              className="w-8 h-8 sm:w-[40px] sm:h-[40px]"
-            />
-            <span
-              className={`${outfit.className} text-sm sm:text-base text-slate-100`}>
-              {skill.name}
-            </span>
-          </motion.li>
-        ))}
-      </ul>
+      <motion.div className="max-w-[600px] lg:max-w-full mx-auto overflow-hidden lg:overflow-visible border border-lime-500">
+        <ul className="w-full flex gap-4 lg:flex-wrap justify-center sm:w-3/4 mx-auto py-2 px-4 rounded-md">
+          {skillsData.map((skill, index) => (
+            <motion.li
+              key={skill.name}
+              className="flex flex-col gap-1 items-center shrink-0"
+              variants={fadeInAnimation}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={index}>
+              <Image
+                src={skill.icon}
+                alt={`${skill.name}'s logo`}
+                width={40}
+                height={40}
+                className="w-8 h-8 sm:w-[40px] sm:h-[40px]"
+              />
+              <span
+                className={`${outfit.className} hidden lg:block text-base text-slate-100`}>
+                {skill.name}
+              </span>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
     </section>
   );
 };

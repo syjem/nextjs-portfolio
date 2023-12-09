@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
 import toast from 'react-hot-toast';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Textarea from './utils/textarea';
 import EmailField from './utils/email-field';
@@ -10,6 +10,7 @@ import { sendEmail } from '@/actions/send-email';
 import { useSectionInView } from '@/hooks/useSectionInView';
 
 const ContactSection = () => {
+  const formRef = useRef<HTMLFormElement | null>(null);
   const { ref } = useSectionInView('Contact');
 
   const action = async (formData: FormData) => {
@@ -21,6 +22,10 @@ const ContactSection = () => {
     }
 
     toast.success('Email sent successfully');
+
+    if (formRef.current) {
+      formRef.current.reset();
+    }
   };
 
   return (
@@ -35,13 +40,13 @@ const ContactSection = () => {
           viewport={{
             once: true,
           }}
-          className="flex-1 flex flex-col gap-2 md:gap-8 w-full max-w-[450px] mx-auto">
+          className="flex-1 flex flex-col gap-2 md:gap-6 w-full max-w-[450px] mx-auto">
           <h2 className="text-center text-2xl md:text-5xl font-bold text-fuchsia-50">
             Contact
           </h2>
           <p className="text-center text-slate-500 text-sm mb-6">
-            Feeling interested? <br /> Send me a message, and I&apos;ll get back
-            to you as soon as possible.
+            Send me a message, and I&apos;ll get back to you as soon as
+            possible.
           </p>
         </motion.div>
         <motion.div
@@ -51,7 +56,7 @@ const ContactSection = () => {
           viewport={{
             once: true,
           }}>
-          <form action={action} className="flex flex-col gap-3">
+          <form ref={formRef} action={action} className="flex flex-col gap-3">
             <EmailField />
             <Textarea />
             <SubmitButton />
