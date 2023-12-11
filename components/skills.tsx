@@ -38,8 +38,8 @@ const SkillSection = () => {
         Skills Set
       </motion.h2>
 
-      <motion.div className="max-w-[600px] lg:max-w-full mx-auto overflow-x-auto sm:overflow-x-visible">
-        <ul className="w-full flex gap-4 lg:flex-wrap justify-center sm:w-3/4 mx-auto py-2 px-4 rounded-md">
+      <motion.div className="max-w-[600px] lg:max-w-full mx-auto">
+        <ul className="w-full flex gap-4 flex-wrap justify-center sm:w-3/4 mx-auto py-2 px-4 rounded-md">
           {skillsData.map((skill, index) => (
             <motion.li
               key={skill.name}
@@ -56,7 +56,7 @@ const SkillSection = () => {
                 alt={`${skill.name}'s logo`}
                 width={40}
                 height={40}
-                className="w-8 h-8 sm:w-[40px] sm:h-[40px]"
+                className="w-7 h-7 sm:w-[40px] sm:h-[40px]"
               />
               <span
                 className={`${outfit.className} hidden lg:block text-base text-slate-100`}>

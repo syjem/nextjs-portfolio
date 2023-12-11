@@ -33,7 +33,7 @@ const ContactSection = () => {
       ref={ref}
       id="contact"
       className="pb-20 pt-10 w-full max-w-5xl mx-auto mt-4 sm:mt-20 scroll-mt-24 px-4">
-      <div className="w-full sm:w-[70%] mx-auto flex flex-col items-center sm:items-start lg:flex-row justify-center gap-4 md:gap-16">
+      <div className="w-full sm:w-[70%] mx-auto flex flex-col items-center sm:items-start lg:flex-row justify-center gap-4 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,8 +45,7 @@ const ContactSection = () => {
             Contact
           </h2>
           <p className="text-center text-slate-500 text-sm mb-6">
-            Send me a message, and I&apos;ll get back to you as soon as
-            possible.
+            If you&apos;d like to get in touch, feel free to send me a message.
           </p>
         </motion.div>
         <motion.div
