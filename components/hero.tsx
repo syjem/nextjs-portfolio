@@ -58,7 +58,7 @@ const HeroSection = () => {
           className="w-full flex flex-col items-center gap-4 my-8 xs:my-4 px-4"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-3xl md:text-6xl text-fuchsia-50 font-bold text-center">
+          <h1 className="text-3xl md:text-6xl text-slate-800 dark:text-fuchsia-50 font-bold text-center">
             Full Stack Developer
           </h1>
           <p className="text-fuchsia-500 text-base text-center">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from '../ui/input';
 
 const EmailField = () => {
   return (
@@ -6,7 +7,7 @@ const EmailField = () => {
       <label htmlFor="email" className="label">
         Email
       </label>
-      <input
+      <Input
         type="email"
         id="email"
         name="email"
@@ -14,7 +15,6 @@ const EmailField = () => {
         maxLength={80}
         autoComplete="off"
         placeholder="example@gmail.com"
-        className="text-input"
       />
     </div>
   );

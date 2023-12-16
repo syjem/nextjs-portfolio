@@ -3,7 +3,7 @@
 import toast from 'react-hot-toast';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Textarea from './utils/textarea';
+import MessageInput from './utils/textarea';
 import EmailField from './utils/email-field';
 import SubmitButton from './utils/submit-btn';
 import { sendEmail } from '@/actions/send-email';
@@ -41,7 +41,7 @@ const ContactSection = () => {
             once: true,
           }}
           className="flex-1 flex flex-col gap-2 md:gap-6 w-full max-w-[450px] mx-auto">
-          <h2 className="text-center text-2xl md:text-5xl font-bold text-fuchsia-50">
+          <h2 className="text-center text-2xl md:text-5xl font-bold text-slate-700 dark:text-fuchsia-50">
             Contact
           </h2>
           <p className="text-center text-slate-500 text-sm mb-6">
@@ -57,7 +57,7 @@ const ContactSection = () => {
           }}>
           <form ref={formRef} action={action} className="flex flex-col gap-3">
             <EmailField />
-            <Textarea />
+            <MessageInput />
             <SubmitButton />
           </form>
         </motion.div>
