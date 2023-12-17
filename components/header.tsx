@@ -1,8 +1,8 @@
 'use client';
 
-import clsx from 'clsx';
 import React from 'react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 import { links } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
@@ -29,7 +29,7 @@ const Header = () => {
                 onClick={() => {
                   setActiveSection(link.name), setTimeOfLastClick(Date.now());
                 }}
-                className={clsx(
+                className={cn(
                   'font-semibold text-slate-700 dark:text-slate-400 hover:text-fuchsia-500 transition',
                   {
                     '!text-fuchsia-600 hover:!text-fuchsia-500':

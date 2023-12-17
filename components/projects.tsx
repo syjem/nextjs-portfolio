@@ -21,8 +21,8 @@ const Projects = () => {
       <motion.h3
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
-        className="text-center text-xs my-4 font-bold text-muted-foreground">
-        TO BE ADDED...
+        className="text-center text-sm my-4 font-bold text-muted-foreground">
+        Coming soon...
       </motion.h3>
     </section>
   );

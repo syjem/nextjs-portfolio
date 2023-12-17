@@ -11,9 +11,9 @@ import sass from '@/public/icons8-sass.svg';
 import next from '@/public/next-icon.ico';
 import tailwind from '@/public/icons8-tailwind-css.svg';
 import typescript from '@/public/icons8-typescript.svg';
-import flask from '@/public/icons8-flask.svg';
-import python from '@/public/icons8-python.svg';
-import postgresql from '@/public/icons8-postgresql.svg';
+// import flask from '@/public/icons8-flask.svg';
+// import python from '@/public/icons8-python.svg';
+// import postgresql from '@/public/icons8-postgresql.svg';
 
 export const links = [
   {
@@ -73,6 +73,14 @@ export const skillsData = [
     icon: css,
   },
   {
+    name: 'SASS',
+    icon: sass,
+  },
+  {
+    name: 'Tailwind',
+    icon: tailwind,
+  },
+  {
     name: 'JavaScript',
     icon: javascript,
   },
@@ -88,24 +96,16 @@ export const skillsData = [
     name: 'Next Js',
     icon: next,
   },
-  {
-    name: 'SASS',
-    icon: sass,
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: tailwind,
-  },
-  {
-    name: 'Python',
-    icon: python,
-  },
-  {
-    name: 'Flask',
-    icon: flask,
-  },
-  {
-    name: 'PostgreSQL',
-    icon: postgresql,
-  },
+  // {
+  //   name: 'Python',
+  //   icon: python,
+  // },
+  // {
+  //   name: 'Flask',
+  //   icon: flask,
+  // },
+  // {
+  //   name: 'PostgreSQL',
+  //   icon: postgresql,
+  // },
 ] as const;
