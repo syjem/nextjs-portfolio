@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
         className={cn(
-          'h-[1500px] bg-slate-50 dark:bg-slate-950 text-slate-950 dark:text-slate-50 relative',
+          'bg-slate-50 dark:bg-slate-950 text-slate-950 dark:text-slate-50 relative',
           inter.className
         )}>
         <ThemeProvider

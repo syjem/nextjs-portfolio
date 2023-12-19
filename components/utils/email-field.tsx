@@ -15,6 +15,7 @@ const EmailField = () => {
         maxLength={80}
         autoComplete="off"
         placeholder="example@gmail.com"
+        className="border-slate-400"
       />
     </div>
   );

@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { skillsData } from '@/lib/data';
 import { Outfit } from 'next/font/google';
 import { useSectionInView } from '@/hooks/useSectionInView';
+import { cn } from '@/lib/utils';
 
 export const outfit = Outfit({ subsets: ['latin'] });
 
@@ -59,7 +60,10 @@ const SkillSection = () => {
                 className="w-7 h-7 sm:w-[40px] sm:h-[40px]"
               />
               <span
-                className={`${outfit.className} hidden lg:block text-base text-slate-100`}>
+                className={cn(
+                  'hidden lg:block text-base text-slate-950 dark:text-slate-100',
+                  outfit.className
+                )}>
                 {skill.name}
               </span>
             </motion.li>

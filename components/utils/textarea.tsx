@@ -14,6 +14,7 @@ const MessageInput = () => {
         required
         placeholder="Write your message here..."
         maxLength={500}
+        className="border-slate-400"
       />
     </div>
   );

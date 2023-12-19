@@ -5,7 +5,7 @@ import Projects from '@/components/projects';
 
 export default function Home() {
   return (
-    <main className="h-screen flex flex-col">
+    <main className="flex flex-col">
       <HeroSection />
       <SkillSection />
       <Projects />

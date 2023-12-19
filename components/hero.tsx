@@ -89,7 +89,7 @@ const HeroSection = () => {
           title="Download resume"
           className="resume">
           Resume
-          <BsDownload className="h-4 w-4 text-slate-300" />
+          <BsDownload className="h-4 w-4 text-slate-800 dark:text-slate-300" />
         </a>
       </motion.div>
     </section>
