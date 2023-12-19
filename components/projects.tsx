@@ -33,13 +33,13 @@ const Projects = () => {
       </motion.h2>
 
       <Tabs defaultValue="designs" className="w-full sm:w-1/2 mx-auto">
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-2 shadow-md">
           <TabsTrigger value="designs">Front-End Designs</TabsTrigger>
           <TabsTrigger value="fullstack">Fullstack</TabsTrigger>
         </TabsList>
         <TabsContent value="designs" className="space-y-4">
           {projectsData.map((item) => (
-            <Card key={item.title} className="dark:border-fuchsia-900">
+            <Card key={item.title} className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-center">{item.title}</CardTitle>
                 <CardDescription className="text-center">
@@ -71,7 +71,7 @@ const Projects = () => {
                     <Link
                       href="https://github.com/syjem"
                       target="_blank"
-                      className="text-fuchsia-400">
+                      className="!text-fuchsia-400">
                       GitHub
                     </Link>
                   </Button>
@@ -79,7 +79,7 @@ const Projects = () => {
                     <Link
                       href="https://github.com/syjem"
                       target="_blank"
-                      className="text-blue-400">
+                      className="!text-blue-400">
                       Preview
                     </Link>
                   </Button>

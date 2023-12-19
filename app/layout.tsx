@@ -7,6 +7,7 @@ import ActiveSectionContextProvider from '@/context/active-section';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ModeToggle } from '@/components/mode-toggle';
 import { cn } from '@/lib/utils';
+import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,12 +30,13 @@ export default function RootLayout({
         )}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
           <ActiveSectionContextProvider>
             <Header />
             {children}
+            <Footer />
             <Toaster position="top-right" />
           </ActiveSectionContextProvider>
           <div className="fixed bottom-4 right-4">
