@@ -32,12 +32,14 @@ const Projects = () => {
         Projects
       </motion.h2>
 
-      <Tabs defaultValue="designs" className="w-full sm:w-1/2 mx-auto">
+      <Tabs defaultValue="designs" className="w-full sm:w-3/4 mx-auto">
         <TabsList className="grid w-full grid-cols-2 shadow-md">
           <TabsTrigger value="designs">Front-End Designs</TabsTrigger>
           <TabsTrigger value="fullstack">Fullstack</TabsTrigger>
         </TabsList>
-        <TabsContent value="designs" className="space-y-4">
+        <TabsContent
+          value="designs"
+          className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projectsData.map((item) => (
             <Card key={item.title} className="shadow-lg">
               <CardHeader>
@@ -50,7 +52,7 @@ const Projects = () => {
                 <Image
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full sm:w-[60%] h-auto mx-auto"
+                  className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
                 />
               </CardContent>
               <CardFooter className="flex flex-col justify-center items-center gap-4">
