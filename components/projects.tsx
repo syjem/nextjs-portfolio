@@ -41,7 +41,7 @@ const Projects = () => {
           value="designs"
           className="grid grid-cols-1 md:grid-cols-2 gap-2">
           {projectsData.map((item) => (
-            <Card key={item.title} className="shadow-lg">
+            <Card key={item.title} className="shadow-lg !border-transparent">
               <CardHeader>
                 <CardTitle className="text-center">{item.title}</CardTitle>
                 <CardDescription className="text-center">
