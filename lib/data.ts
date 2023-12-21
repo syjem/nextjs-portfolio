@@ -36,23 +36,20 @@ export const links = [
 
 export const projectsData = [
   {
-    title: 'CorpComment',
-    description:
-      'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
+    title: 'Project 1',
+    description: 'A brief description...',
     tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
     imageUrl: project1,
   },
   {
-    title: 'rmtDev',
-    description:
-      'Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.',
+    title: 'Project 2',
+    description: 'A brief description...',
     tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
     imageUrl: project2,
   },
   {
-    title: 'Word Analytics',
-    description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
+    title: 'Project 3',
+    description: 'A brief description...',
     tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
     imageUrl: project3,
   },

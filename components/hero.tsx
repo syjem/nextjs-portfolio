@@ -8,12 +8,8 @@ import { BsDownload } from 'react-icons/bs';
 import { useSectionInView } from '@/hooks/useSectionInView';
 import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
 import Socials from './socials';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { outfit } from './skills';
+import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
   const { ref } = useSectionInView('Home', 0.5);
@@ -26,31 +22,34 @@ const HeroSection = () => {
       className="w-full max-w-5xl mx-auto pt-8 sm:pt-20 scroll-mt-24 px-4 pb-20 md:pb-4">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="relative space-x-8 h-32 w-32 xs:h-56 xs:w-56 rounded-full shrink-0">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ type: 'tween', duration: 0.2 }}
-                  className="mb-1 xs:mb-0">
-                  <Image
-                    src="https://avatars.githubusercontent.com/u/119649793?s=400&u=fad3b7fd0bf29a2f9e5ca3657dbd72084c0570bb&v=4"
-                    width={180}
-                    height={180}
-                    priority={true}
-                    quality={95}
-                    alt="User profile"
-                    className="h-full w-full rounded-full border-[2px] border-slate-500 shadow-lg object-cover"
-                  />
-                </motion.div>
-              </TooltipTrigger>
-              <TooltipContent className="mr-16">
-                <span>Jemuel Repoylo</span>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: 'tween', duration: 0.2 }}
+            className="mb-1 xs:mb-0">
+            <Image
+              src="https://avatars.githubusercontent.com/u/119649793?s=400&u=fad3b7fd0bf29a2f9e5ca3657dbd72084c0570bb&v=4"
+              width={180}
+              height={180}
+              priority={true}
+              quality={95}
+              alt="User profile"
+              className="h-full w-full rounded-full border-[2px] border-slate-500 shadow-lg object-cover"
+            />
+          </motion.div>
         </div>
+        <motion.span
+          className={cn(
+            'text-slate-950 dark:text-fuchsia-50 text-base sm:text-lg font-semibold',
+            outfit.className
+          )}
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
+          viewport={{
+            once: true,
+          }}>
+          JEMUEL REPOYLO
+        </motion.span>
         <motion.div
           className="flex gap-2 w-full justify-center items-center"
           initial={{ opacity: 0, scale: 0 }}
