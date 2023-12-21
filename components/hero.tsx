@@ -63,7 +63,7 @@ const HeroSection = () => {
           <Socials />
         </motion.div>
         <motion.div
-          className="w-full flex flex-col items-center gap-4 my-8 xs:my-4 px-4"
+          className="w-full flex flex-col items-center gap-4 my-2 px-4"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}>
           <h1 className="text-3xl md:text-6xl text-slate-950 dark:text-fuchsia-50 font-bold text-center">

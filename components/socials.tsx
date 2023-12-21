@@ -13,7 +13,7 @@ const Socials = ({ className }: { className?: string }) => {
         target="_blank"
         href="https://github.com/syjem"
         className="hover:scale-[1.1] transition-transform">
-        <IoLogoGithub className={cn('w-6 h-6 shrink-0', className)} />
+        <IoLogoGithub className={cn('w-5 h-5 shrink-0', className)} />
       </Link>
       <Link
         target="_blank"
@@ -28,12 +28,13 @@ const Socials = ({ className }: { className?: string }) => {
       <Link
         target="_blank"
         href="https://twitter.com/repoylo_jemuel"
-        className="hover:scale-[1.1] transition-transform">
+        className="hover:scale-[1.1] transition-transform relative">
         <Image
           src={twitter}
           alt="twitter logo"
-          className={cn('w-6 h-6 shrink-0 bg-white rounded-lg', className)}
+          className={cn('w-6 h-6 shrink-0', className)}
         />
+        <div className="absolute w-4 h-4 bg-white top-0 translate-x-1 translate-y-1 -z-10"></div>
       </Link>
     </>
   );
