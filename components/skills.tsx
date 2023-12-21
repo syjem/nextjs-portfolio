@@ -35,8 +35,8 @@ const SkillSection = () => {
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
-        className="text-center text-xl sm:text-2xl my-4 font-bold text-slate-700 dark:text-fuchsia-50">
-        Skills Set
+        className="text-center text-lg sm:text-xl my-4 font-bold text-slate-700 dark:text-fuchsia-50">
+        Skill Set
       </motion.h2>
 
       <motion.div className="max-w-[600px] lg:max-w-full mx-auto">

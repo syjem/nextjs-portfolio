@@ -8,7 +8,7 @@ const Footer = () => {
         © Jemuel Repoylo. All rights reserved.
       </p>
       <nav className="sm:ml-auto flex items-center gap-4 sm:gap-6">
-        <Socials />
+        <Socials className="sm:w-7 sm:h-7" />
       </nav>
     </footer>
   );

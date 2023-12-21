@@ -39,9 +39,7 @@ export default function RootLayout({
             <Footer />
             <Toaster position="top-right" />
           </ActiveSectionContextProvider>
-          <div className="fixed bottom-4 right-4">
-            <ModeToggle />
-          </div>
+          <ModeToggle />
         </ThemeProvider>
       </body>
     </html>

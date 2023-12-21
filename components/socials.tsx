@@ -4,15 +4,16 @@ import React from 'react';
 import { IoLogoGithub } from 'react-icons/io';
 import linkedin from '@/public/icons8-linkedin.svg';
 import twitter from '@/public/icons8-twitterx.svg';
+import { cn } from '@/lib/utils';
 
-const Socials = () => {
+const Socials = ({ className }: { className?: string }) => {
   return (
     <>
       <Link
         target="_blank"
         href="https://github.com/syjem"
         className="hover:scale-[1.1] transition-transform">
-        <IoLogoGithub className="w-5 h-5 xs:w-7 xs:h-7 shrink-0" />
+        <IoLogoGithub className={cn('w-6 h-6 shrink-0', className)} />
       </Link>
       <Link
         target="_blank"
@@ -21,7 +22,7 @@ const Socials = () => {
         <Image
           src={linkedin}
           alt="linkedin logo"
-          className="w-5 h-5 xs:w-[30px] xs:h-[30px] shrink-0"
+          className={cn('w-6 h-6 shrink-0', className)}
         />
       </Link>
       <Link
@@ -31,7 +32,7 @@ const Socials = () => {
         <Image
           src={twitter}
           alt="twitter logo"
-          className="w-5 h-5 xs:w-[26px] xs:h-[26px] shrink-0 bg-white rounded-lg"
+          className={cn('w-6 h-6 shrink-0 bg-white rounded-lg', className)}
         />
       </Link>
     </>
