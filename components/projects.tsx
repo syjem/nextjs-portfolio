@@ -12,6 +12,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { projectsData } from '@/lib/data';
 import { Button } from './ui/button';
@@ -38,58 +45,71 @@ const Projects = () => {
         viewport={{
           once: true,
         }}>
-        <Tabs defaultValue="designs" className="w-full sm:w-3/4 mx-auto">
-          <TabsList className="grid w-full grid-cols-2 dark:shadow-md">
+        <Tabs defaultValue="designs" className="w-full sm:w-1/2 mx-auto">
+          <TabsList className="grid w-full grid-cols-2 gap-2 dark:shadow-md mb-8 dark:bg-transparent">
             <TabsTrigger value="designs">Front-End/Designs</TabsTrigger>
             <TabsTrigger value="fullstack">Fullstack</TabsTrigger>
           </TabsList>
-          <TabsContent
-            value="designs"
-            className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {projectsData.map((item) => (
-              <Card key={item.title} className="shadow-lg !border-transparent">
-                <CardHeader>
-                  <CardTitle className="text-center">{item.title}</CardTitle>
-                  <CardDescription className="text-center">
-                    {item.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2 w-full">
-                  <Image
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
-                  />
-                </CardContent>
-                <CardFooter className="flex flex-col justify-center items-center gap-4">
-                  <div className="flex gap-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="text-xs sm:text-sm">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-center items-center gap-4">
-                    <Button variant="link" asChild>
-                      <Link
-                        href="https://github.com/syjem"
-                        target="_blank"
-                        className="!text-fuchsia-400">
-                        GitHub
-                      </Link>
-                    </Button>
-                    <Button variant="link" asChild>
-                      <Link
-                        href="https://github.com/syjem"
-                        target="_blank"
-                        className="!text-blue-400">
-                        Preview
-                      </Link>
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            ))}
+          <TabsContent value="designs" className="w-full">
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="w-full">
+              <CarouselContent>
+                {projectsData.map((item) => (
+                  <CarouselItem key={item.title}>
+                    <Card key={item.title} className="shadow-lg">
+                      <CardHeader>
+                        <CardTitle className="text-center">
+                          {item.title}
+                        </CardTitle>
+                        <CardDescription className="text-center">
+                          {item.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-2 w-full">
+                        <Image
+                          src={item.imageUrl}
+                          alt={item.title}
+                          className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
+                        />
+                      </CardContent>
+                      <CardFooter className="flex flex-col justify-center items-center gap-4">
+                        <div className="flex gap-2">
+                          {item.tags.map((tag) => (
+                            <span key={tag} className="text-xs sm:text-sm">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex justify-center items-center gap-4">
+                          <Button variant="link" asChild>
+                            <Link
+                              href="https://github.com/syjem"
+                              target="_blank"
+                              className="!text-fuchsia-400">
+                              GitHub
+                            </Link>
+                          </Button>
+                          <Button variant="link" asChild>
+                            <Link
+                              href="https://github.com/syjem"
+                              target="_blank"
+                              className="!text-blue-400">
+                              Preview
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardFooter>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </TabsContent>
           <TabsContent value="fullstack">
             <Card>
