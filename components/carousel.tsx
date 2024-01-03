@@ -20,67 +20,73 @@ import { projectsData } from '@/lib/data';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import Autoplay from 'embla-carousel-autoplay';
 
-export function CarouselDemo() {
-  return (
-    <section className="pt-10 w-full max-w-5xl mx-auto mt-4 sm:mt-20 scroll-mt-24 px-4">
-      <Carousel
-        opts={{
-          align: 'start',
-          loop: true,
-        }}
-        className="w-full max-w-md mx-auto">
-        <CarouselContent>
-          {projectsData.map((item) => (
-            <CarouselItem key={item.title}>
-              <Card key={item.title} className="shadow-lg !border-transparent">
-                <CardHeader>
-                  <CardTitle className="text-center">{item.title}</CardTitle>
-                  <CardDescription className="text-center">
-                    {item.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-2 w-full">
-                  <Image
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
-                  />
-                </CardContent>
-                <CardFooter className="flex flex-col justify-center items-center gap-4">
-                  <div className="flex gap-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="text-xs sm:text-sm">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-center items-center gap-4">
-                    <Button variant="link" asChild>
-                      <Link
-                        href="https://github.com/syjem"
-                        target="_blank"
-                        className="!text-fuchsia-400">
-                        GitHub
-                      </Link>
-                    </Button>
-                    <Button variant="link" asChild>
-                      <Link
-                        href="https://github.com/syjem"
-                        target="_blank"
-                        className="!text-blue-400">
-                        Preview
-                      </Link>
-                    </Button>
-                  </div>
-                </CardFooter>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </section>
+const ProjectCarousel = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
   );
-}
+
+  return (
+    <Carousel
+      plugins={[plugin.current]}
+      opts={{
+        align: 'start',
+        loop: true,
+      }}
+      className="w-full">
+      <CarouselContent>
+        {projectsData.map((item) => (
+          <CarouselItem key={item.title}>
+            <Card key={item.title} className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-center">{item.title}</CardTitle>
+                <CardDescription className="text-center">
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2 w-full">
+                <Image
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
+                />
+              </CardContent>
+              <CardFooter className="flex flex-col justify-center items-center gap-4">
+                <div className="flex gap-2">
+                  {item.tags.map((tag) => (
+                    <span key={tag} className="text-xs sm:text-sm">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex justify-center items-center gap-4">
+                  <Button variant="link" asChild>
+                    <Link
+                      href="https://github.com/syjem"
+                      target="_blank"
+                      className="!text-fuchsia-400">
+                      GitHub
+                    </Link>
+                  </Button>
+                  <Button variant="link" asChild>
+                    <Link
+                      href="https://github.com/syjem"
+                      target="_blank"
+                      className="!text-blue-400">
+                      Preview
+                    </Link>
+                  </Button>
+                </div>
+              </CardFooter>
+            </Card>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext className="hidden sm:flex" />
+    </Carousel>
+  );
+};
+
+export default ProjectCarousel;

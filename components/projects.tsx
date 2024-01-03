@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useSectionInView } from '@/hooks/useSectionInView';
@@ -12,17 +12,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { projectsData } from '@/lib/data';
-import { Button } from './ui/button';
-import Link from 'next/link';
+
+import ProjectCarousel from './carousel';
 
 const Projects = () => {
   const { ref } = useSectionInView('Projects', 0.3);
@@ -51,70 +44,17 @@ const Projects = () => {
             <TabsTrigger value="fullstack">Fullstack</TabsTrigger>
           </TabsList>
           <TabsContent value="designs" className="w-full">
-            <Carousel
-              opts={{
-                align: 'start',
-                loop: true,
-              }}
-              className="w-full">
-              <CarouselContent>
-                {projectsData.map((item) => (
-                  <CarouselItem key={item.title}>
-                    <Card key={item.title} className="shadow-lg">
-                      <CardHeader>
-                        <CardTitle className="text-center">
-                          {item.title}
-                        </CardTitle>
-                        <CardDescription className="text-center">
-                          {item.description}
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent className="space-y-2 w-full">
-                        <Image
-                          src={item.imageUrl}
-                          alt={item.title}
-                          className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
-                        />
-                      </CardContent>
-                      <CardFooter className="flex flex-col justify-center items-center gap-4">
-                        <div className="flex gap-2">
-                          {item.tags.map((tag) => (
-                            <span key={tag} className="text-xs sm:text-sm">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex justify-center items-center gap-4">
-                          <Button variant="link" asChild>
-                            <Link
-                              href="https://github.com/syjem"
-                              target="_blank"
-                              className="!text-fuchsia-400">
-                              GitHub
-                            </Link>
-                          </Button>
-                          <Button variant="link" asChild>
-                            <Link
-                              href="https://github.com/syjem"
-                              target="_blank"
-                              className="!text-blue-400">
-                              Preview
-                            </Link>
-                          </Button>
-                        </div>
-                      </CardFooter>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <ProjectCarousel />
           </TabsContent>
           <TabsContent value="fullstack">
             <Card>
               <CardHeader>
-                <CardTitle>Fullstack Application</CardTitle>
+                <CardTitle className="text-center">
+                  Fullstack Applications
+                  <p className="text-muted-foreground text-lg mt-4">
+                    Coming soon...
+                  </p>
+                </CardTitle>
                 <CardDescription></CardDescription>
               </CardHeader>
               <CardContent className="space-y-2"></CardContent>
