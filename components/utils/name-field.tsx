@@ -1,18 +1,18 @@
 import React from 'react';
 import { Input } from '../ui/input';
 
-const EmailField = () => {
+const NameField = () => {
   return (
     <div className="flex flex-col gap-2 w-full">
-      <label htmlFor="email" className="label">
-        Email
+      <label htmlFor="name" className="label">
+        Name
       </label>
       <Input
-        type="email"
-        id="email"
-        name="email"
+        type="text"
+        id="name"
+        name="name"
         required
-        maxLength={80}
+        maxLength={50}
         autoComplete="off"
         className="border-slate-400"
       />
@@ -20,4 +20,4 @@ const EmailField = () => {
   );
 };
 
-export default EmailField;
+export default NameField;

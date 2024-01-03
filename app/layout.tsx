@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/header';
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from '@/components/ui/sonner';
 import ActiveSectionContextProvider from '@/context/active-section';
 import { ThemeProvider } from '@/components/theme-provider';
 import { ModeToggle } from '@/components/mode-toggle';
@@ -37,7 +37,7 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer />
-            <Toaster position="top-right" />
+            <Toaster />
           </ActiveSectionContextProvider>
           <ModeToggle />
         </ThemeProvider>

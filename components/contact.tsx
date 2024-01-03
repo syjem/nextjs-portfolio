@@ -1,6 +1,6 @@
 'use client';
 
-import toast from 'react-hot-toast';
+import { toast } from 'sonner';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import MessageInput from './utils/textarea';
@@ -8,6 +8,7 @@ import EmailField from './utils/email-field';
 import SubmitButton from './utils/submit-btn';
 import { sendEmail } from '@/actions/send-email';
 import { useSectionInView } from '@/hooks/useSectionInView';
+import NameField from './utils/name-field';
 
 const ContactSection = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -21,7 +22,7 @@ const ContactSection = () => {
       return;
     }
 
-    toast.success('Email sent successfully');
+    toast.success('Email sent successfully.');
 
     if (formRef.current) {
       formRef.current.reset();
@@ -56,6 +57,7 @@ const ContactSection = () => {
             once: true,
           }}>
           <form ref={formRef} action={action} className="flex flex-col gap-3">
+            <NameField />
             <EmailField />
             <MessageInput />
             <SubmitButton />

@@ -8,10 +8,17 @@ import PortfolioEmailTemplate from '@/components/emails/portfolio-email';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (formData: FormData) => {
-  const sender = formData.get('email');
+  const name = formData.get('name');
+  const email = formData.get('email');
   const message = formData.get('message');
 
-  if (!validateFields(sender, 80)) {
+  if (!validateFields(name, 50)) {
+    return {
+      error: 'Invalid name',
+    };
+  }
+
+  if (!validateFields(email, 80)) {
     return {
       error: 'Invalid email',
     };
@@ -26,12 +33,12 @@ export const sendEmail = async (formData: FormData) => {
   let data;
   try {
     data = await resend.emails.send({
-      from: 'Contact form <onboarding@resend.dev>',
+      from: `${name as string} <onboarding@resend.dev>`,
       to: 'syjem143@gmail.com',
-      subject: 'Potential Client',
-      reply_to: sender as string,
+      subject: `${name} wants to connect with you`,
+      reply_to: email as string,
       react: React.createElement(PortfolioEmailTemplate, {
-        sender: sender as string,
+        email: email as string,
         message: message as string,
       }),
     });

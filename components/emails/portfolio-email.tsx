@@ -13,22 +13,22 @@ import {
 import { Tailwind } from '@react-email/tailwind';
 
 type PortfolioEmailProps = {
-  sender: string;
+  email: string;
   message: string;
 };
 
-const PortfolioEmailTemplate = ({ sender, message }: PortfolioEmailProps) => {
+const PortfolioEmailTemplate = ({ email, message }: PortfolioEmailProps) => {
   return (
     <Html>
       <Head />
-      <Preview>New email from your portfolio website.</Preview>
+      <Preview>{message}</Preview>
       <Tailwind>
         <Body>
           <Container>
             <Section>
               <Text>{message}</Text>
               <Hr />
-              <Text>From: {sender}</Text>
+              <Text>From: {email}</Text>
             </Section>
           </Container>
         </Body>
