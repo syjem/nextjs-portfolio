@@ -49,7 +49,7 @@ const ProjectCarousel = () => {
                 <Image
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full sm:w-[60%] md:w-full h-auto mx-auto"
+                  className="w-full xs:w-[65%] md:w-[80%] h-auto mx-auto"
                 />
               </CardContent>
               <CardFooter className="flex flex-col justify-center items-center gap-4">

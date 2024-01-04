@@ -3,12 +3,12 @@
 import { toast } from 'sonner';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import MessageInput from './utils/textarea';
-import EmailField from './utils/email-field';
-import SubmitButton from './utils/submit-btn';
+import MessageInput from './form/textarea';
+import EmailField from './form/email-field';
+import SubmitButton from './form/submit-btn';
 import { sendEmail } from '@/actions/send-email';
 import { useSectionInView } from '@/hooks/useSectionInView';
-import NameField from './utils/name-field';
+import NameField from './form/name-field';
 
 const ContactSection = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -46,7 +46,7 @@ const ContactSection = () => {
             Contact
           </h2>
           <p className="text-center text-slate-500 text-sm mb-6">
-            If you&apos;d like to get in touch, feel free to send me a message.
+            If you&apos;d like to get in touch, feel free to send me an email.
           </p>
         </motion.div>
         <motion.div

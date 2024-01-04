@@ -24,7 +24,7 @@ export const sendEmail = async (formData: FormData) => {
     };
   }
 
-  if (!validateFields(message, 500)) {
+  if (!validateFields(message, 1000)) {
     return {
       error: 'Invalid message',
     };
@@ -35,7 +35,7 @@ export const sendEmail = async (formData: FormData) => {
     data = await resend.emails.send({
       from: `${name as string} <onboarding@resend.dev>`,
       to: 'syjem143@gmail.com',
-      subject: `${name} wants to connect with you`,
+      subject: 'Portfolio message',
       reply_to: email as string,
       react: React.createElement(PortfolioEmailTemplate, {
         email: email as string,
