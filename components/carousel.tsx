@@ -40,7 +40,7 @@ const ProjectCarousel = () => {
           <CarouselItem key={item.title}>
             <Card key={item.title} className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-center">{item.title}</CardTitle>
+                <CardTitle className="text-center mb-2">{item.title}</CardTitle>
                 <CardDescription className="text-center">
                   {item.description}
                 </CardDescription>
@@ -54,10 +54,13 @@ const ProjectCarousel = () => {
               </CardContent>
               <CardFooter className="flex flex-col justify-center items-center gap-4">
                 <div className="flex gap-2">
-                  {item.tags.map((tag) => (
-                    <span key={tag} className="text-xs sm:text-sm">
-                      {tag}
-                    </span>
+                  {item.tags.map((tag, index) => (
+                    <Image
+                      key={index}
+                      src={tag}
+                      alt="Logo"
+                      className="w-[22px] h-[22px]"
+                    />
                   ))}
                 </div>
                 <div className="flex justify-center items-center gap-4">

@@ -14,6 +14,7 @@ const EmailField = () => {
         required
         maxLength={80}
         autoComplete="off"
+        placeholder="Enter your email address..."
         className="border-slate-400"
       />
     </div>

@@ -13,7 +13,7 @@ import tailwind from '@/public/icons8-tailwind-css.svg';
 import typescript from '@/public/icons8-typescript.svg';
 // import flask from '@/public/icons8-flask.svg';
 // import python from '@/public/icons8-python.svg';
-// import postgresql from '@/public/icons8-postgresql.svg';
+import postgresql from '@/public/icons8-postgresql.svg';
 
 export const links = [
   {
@@ -36,21 +36,24 @@ export const links = [
 
 export const projectsData = [
   {
-    title: 'Project 1',
-    description: 'A brief description...',
-    tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
+    title: 'Financial Tracker',
+    description:
+      'Provides a user-friendly interface for monitoring and analyzing financial data in real-time.',
+    tags: [react, next, typescript, tailwind, postgresql],
     imageUrl: project1,
   },
   {
-    title: 'Project 2',
-    description: 'A brief description...',
-    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
+    title: 'InvestMate',
+    description:
+      'Serves as a comprehensive investment platform that enables users to invest in stocks and manage their portfolio in a seamless and user-friendly manner.',
+    tags: [react, typescript, next, tailwind],
     imageUrl: project2,
   },
   {
-    title: 'Project 3',
-    description: 'A brief description...',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
+    title: 'Foundation',
+    description:
+      "We'll build the house of your Dream. Provide's customers with the flexibility to choose from a range of house designs.",
+    tags: [next, react, typescript, postgresql, sass],
     imageUrl: project3,
   },
 ] as const;
