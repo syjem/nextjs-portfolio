@@ -92,7 +92,7 @@ const HeroSection = () => {
         </Link>
         <a
           download
-          href="/updated_resume.pdf"
+          href="/resume-updated.pdf"
           tabIndex={0}
           title="Download resume"
           className="resume">
