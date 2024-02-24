@@ -40,7 +40,9 @@ const ProjectCarousel = () => {
           <CarouselItem key={item.title}>
             <Card key={item.title} className="shadow-lg">
               <CardHeader>
-                <CardTitle className="text-center mb-2">{item.title}</CardTitle>
+                <CardTitle className="text-center mb-2 text-slate-100">
+                  {item.title}
+                </CardTitle>
                 <CardDescription className="text-center">
                   {item.description}
                 </CardDescription>

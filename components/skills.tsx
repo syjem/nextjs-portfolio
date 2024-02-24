@@ -35,7 +35,7 @@ const SkillSection = () => {
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
-        className="text-center text-lg sm:text-xl my-4 font-bold text-slate-700 dark:text-fuchsia-50">
+        className="text-center text-lg sm:text-xl my-4 font-bold text-fuchsia-50">
         Skill Set
       </motion.h2>
 
@@ -61,7 +61,7 @@ const SkillSection = () => {
               />
               <span
                 className={cn(
-                  'hidden lg:block text-base text-slate-950 dark:text-slate-100',
+                  'hidden lg:block text-base text-slate-100',
                   outfit.className
                 )}>
                 {skill.name}

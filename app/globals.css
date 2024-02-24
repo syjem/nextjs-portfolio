@@ -4,10 +4,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 222.2 84% 4.9%;
     --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
@@ -28,7 +28,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 217.2 32.6% 17.5%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
@@ -76,20 +76,12 @@
   }
 }
 
-.contact-me {
-  @apply py-[6px] md:py-2 px-3 md:px-4 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-sky-500 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-sky-600 bg-fuchsia-900 text-slate-50 hover:bg-fuchsia-900/90 focus:scale-[1.02] hover:scale-[1.02] active:scale-100 border-[2px] dark:border-fuchsia-900;
-}
-
-.resume {
-  @apply gap-2 cursor-pointer py-[6px] md:py-2 px-3 md:px-4 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-sky-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-sky-500 border-[2px] hover:text-slate-900 border-fuchsia-800 dark:border-fuchsia-800 dark:bg-slate-950 dark:hover:bg-slate-950/100 dark:hover:text-slate-50 focus:scale-[1.02] hover:scale-[1.02] active:scale-100;
-}
-
 .label {
   @apply text-sm sm:text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
 }
 
 .submit-btn {
-  @apply py-[6px] md:py-2 px-3 md:px-4 inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-sky-500 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-sky-600 bg-fuchsia-900 text-slate-50 hover:bg-fuchsia-900/90 active:scale-95 border-[2px] dark:border-fuchsia-900 w-[40%] mt-2 gap-2;
+  @apply py-[6px] md:py-2 px-3 md:px-4 inline-flex items-center justify-center rounded-md text-sm font-medium  transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ring-offset-slate-950  bg-fuchsia-900 text-slate-50 hover:bg-fuchsia-900/90 active:scale-95 border-[2px] border-fuchsia-900 w-[40%] mt-2 gap-2;
 }
 
 .paper-plane {

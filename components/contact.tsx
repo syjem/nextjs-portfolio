@@ -33,7 +33,7 @@ const ContactSection = () => {
     <section
       ref={ref}
       id="contact"
-      className="pb-20 pt-10 w-full max-w-5xl mx-auto mt-4 sm:mt-20 scroll-mt-24 px-4">
+      className="pb-20 pt-10 w-full max-w-5xl mx-auto mt-4 sm:mt-20 scroll-mt-24 px-4 z-50">
       <div className="w-full sm:w-[70%] mx-auto flex flex-col items-center sm:items-start lg:flex-row justify-center gap-4 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: -100 }}
@@ -42,10 +42,10 @@ const ContactSection = () => {
             once: true,
           }}
           className="flex-1 flex flex-col gap-2 md:gap-6 w-full max-w-[450px] mx-auto">
-          <h2 className="text-center text-2xl md:text-5xl font-bold text-slate-700 dark:text-fuchsia-50">
+          <h2 className="text-center text-2xl md:text-5xl font-bold text-fuchsia-50">
             Contact
           </h2>
-          <p className="text-center text-slate-500 text-sm mb-6">
+          <p className="text-center text-slate-400 text-sm mb-6">
             If you&apos;d like to get in touch, feel free to send me an email.
           </p>
         </motion.div>

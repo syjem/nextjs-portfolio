@@ -10,6 +10,7 @@ import { useActiveSectionContext } from '@/hooks/useActiveSectionContext';
 import Socials from './socials';
 import { outfit } from './skills';
 import { cn } from '@/lib/utils';
+import { buttonVariants } from './ui/button';
 
 const HeroSection = () => {
   const { ref } = useSectionInView('Home', 0.5);
@@ -19,7 +20,7 @@ const HeroSection = () => {
     <section
       ref={ref}
       id="home"
-      className="w-full max-w-5xl mx-auto pt-8 sm:pt-20 scroll-mt-24 px-4 pb-20 md:pb-4">
+      className="w-full max-w-5xl mx-auto pt-8 sm:pt-20 scroll-mt-24 px-4 pb-20 md:pb-4 z-50">
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="relative space-x-8 h-32 w-32 xs:h-56 xs:w-56 rounded-full shrink-0">
           <motion.div
@@ -40,7 +41,7 @@ const HeroSection = () => {
         </div>
         <motion.span
           className={cn(
-            'text-slate-950 dark:text-fuchsia-50 text-base sm:text-lg font-semibold',
+            'text-fuchsia-50 text-base sm:text-lg font-semibold',
             outfit.className
           )}
           initial={{ opacity: 0, y: -100 }}
@@ -51,7 +52,7 @@ const HeroSection = () => {
           JEMUEL REPOYLO
         </motion.span>
         <motion.div
-          className="flex gap-2 w-full justify-center items-center"
+          className="flex gap-2 w-full justify-center items-center z-50"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
@@ -66,7 +67,7 @@ const HeroSection = () => {
           className="w-full flex flex-col items-center gap-4 my-2 px-4"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-3xl md:text-6xl text-slate-950 dark:text-fuchsia-50 font-bold text-center">
+          <h1 className="text-3xl md:text-6xl text-fuchsia-50 font-bold text-center">
             Web Developer
           </h1>
           <p className="text-fuchsia-500 text-base text-center">
@@ -76,14 +77,14 @@ const HeroSection = () => {
         </motion.div>
       </div>
       <motion.div
-        className="flex items-center justify-center gap-4 mt-2"
+        className="flex items-center justify-center gap-4 mt-4"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.1,
         }}>
         <Link
-          className="contact-me"
+          className="inline-flex animate-shimmer items-center justify-center rounded-md border border-fuchsia-500 bg-[linear-gradient(110deg,#1a0021,45%,#a21caf,55%,#1a0021)] bg-[length:200%_100%] py-[6px] md:py-2 px-6 text-sm font-medium text-slate-100 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 cursor-pointer hover:scale-[1.02] active:scale-100"
           href="#contact"
           onClick={() => {
             setActiveSection('Contact'), setTimeOfLastClick(Date.now());
@@ -95,9 +96,13 @@ const HeroSection = () => {
           href="/resume-updated.pdf"
           tabIndex={0}
           title="Download resume"
-          className="resume">
+          className={buttonVariants({
+            variant: 'outline',
+            className:
+              'bg-transparent border hover:scale-[1.02] active:scale-100 py-[6px] md:py-2 hover:bg-transparent hover:text-white',
+          })}>
           Resume
-          <BsDownload className="h-4 w-4 text-slate-800 dark:text-slate-300" />
+          <BsDownload className="h-4 w-4 text-slate-300 ml-2" />
         </a>
       </motion.div>
     </section>

@@ -4,8 +4,6 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/sonner';
 import ActiveSectionContextProvider from '@/context/active-section';
-import { ThemeProvider } from '@/components/theme-provider';
-import { ModeToggle } from '@/components/mode-toggle';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/footer';
 
@@ -24,23 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={cn(
-          'bg-fuchsia-50 dark:bg-slate-950 text-slate-950 dark:text-slate-50 relative',
-          inter.className
-        )}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
-            <Toaster />
-          </ActiveSectionContextProvider>
-          <ModeToggle />
-        </ThemeProvider>
+        className={cn('bg-slate-950 text-slate-50 relative', inter.className)}>
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+          <Footer />
+          <Toaster />
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );

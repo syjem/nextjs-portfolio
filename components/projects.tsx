@@ -17,7 +17,7 @@ const Projects = () => {
       <motion.h2
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0, transition: { delay: 0.05 } }}
-        className="text-center text-xl sm:text-2xl my-4 mb-12 font-bold text-slate-700 dark:text-fuchsia-50">
+        className="text-center text-xl sm:text-2xl my-4 mb-12 font-bold text-fuchsia-50">
         Featured Projects
       </motion.h2>
 
