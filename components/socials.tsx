@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -5,10 +7,20 @@ import { IoLogoGithub } from 'react-icons/io';
 import linkedin from '@/public/icons8-linkedin.svg';
 import twitter from '@/public/icons8-twitterx.svg';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 const Socials = ({ className }: { className?: string }) => {
   return (
-    <>
+    <motion.div
+      className="flex gap-2 w-full justify-center items-center z-50"
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        type: 'spring',
+        stiffness: 125,
+        delay: 0.1,
+        duration: 0.7,
+      }}>
       <Link
         target="_blank"
         href="https://github.com/syjem"
@@ -36,7 +48,7 @@ const Socials = ({ className }: { className?: string }) => {
         />
         <div className="absolute w-4 h-4 bg-white top-0 translate-x-1 translate-y-1 -z-10"></div>
       </Link>
-    </>
+    </motion.div>
   );
 };
 

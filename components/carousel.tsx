@@ -18,13 +18,12 @@ import {
 } from '@/components/ui/card';
 import { projectsData } from '@/lib/data';
 import Image from 'next/image';
-import { Button } from './ui/button';
-import Link from 'next/link';
 import Autoplay from 'embla-carousel-autoplay';
+import ProjectLinks from './project-links';
 
 const ProjectCarousel = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 2500, stopOnInteraction: true })
   );
 
   return (
@@ -36,9 +35,9 @@ const ProjectCarousel = () => {
       }}
       className="w-full">
       <CarouselContent>
-        {projectsData.map((item) => (
+        {projectsData.map((item, index) => (
           <CarouselItem key={item.title}>
-            <Card key={item.title} className="shadow-lg">
+            <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-center mb-2 text-slate-100">
                   {item.title}
@@ -65,24 +64,11 @@ const ProjectCarousel = () => {
                     />
                   ))}
                 </div>
-                <div className="flex justify-center items-center gap-4">
-                  <Button variant="link" asChild>
-                    <Link
-                      href="https://github.com/syjem"
-                      target="_blank"
-                      className="!text-fuchsia-400">
-                      GitHub
-                    </Link>
-                  </Button>
-                  <Button variant="link" asChild>
-                    <Link
-                      href="https://github.com/syjem"
-                      target="_blank"
-                      className="!text-blue-400">
-                      Preview
-                    </Link>
-                  </Button>
-                </div>
+                <ProjectLinks />
+                <span className="text-xs text-slate-100 font-semibold opacity-90">
+                  <span className="text-fuchsia-500">{index + 1}</span> /{' '}
+                  {projectsData.length}
+                </span>
               </CardFooter>
             </Card>
           </CarouselItem>
