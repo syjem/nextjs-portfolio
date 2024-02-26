@@ -64,7 +64,10 @@ const ProjectCarousel = () => {
                     />
                   ))}
                 </div>
-                <ProjectLinks />
+                <ProjectLinks
+                  githubLink={item.githubLink}
+                  previewLink={item.previewLink}
+                />
                 <span className="text-xs text-slate-100 font-semibold opacity-90">
                   <span className="text-fuchsia-500">{index + 1}</span> /{' '}
                   {projectsData.length}

@@ -1,6 +1,4 @@
-import React from 'react';
-
-import project1 from '@/public/project-1.jpg';
+import project1 from '@/public/project-1.png';
 import project2 from '@/public/project-2.png';
 import project3 from '@/public/project-3.jpg';
 import html from '@/public/icons8-html.svg';
@@ -36,25 +34,13 @@ export const links = [
 
 export const projectsData = [
   {
-    title: 'Financial Tracker',
+    title: 'Financial Invoices Dashboard',
     description:
-      'Provides a user-friendly interface for monitoring and analyzing financial data in real-time.',
+      'Provides a user-friendly interface for dislaying and monitoring financial invoices data in real-time.',
     tags: [react, next, typescript, tailwind, postgresql],
     imageUrl: project1,
-  },
-  {
-    title: 'InvestMate',
-    description:
-      'Serves as a comprehensive investment platform that enables users to invest in stocks and manage their portfolio in a seamless and user-friendly manner.',
-    tags: [react, typescript, next, tailwind],
-    imageUrl: project2,
-  },
-  {
-    title: 'Foundation',
-    description:
-      "We'll build the house of your Dream. Provide's customers with the flexibility to choose from a range of house designs.",
-    tags: [next, react, typescript, postgresql, sass],
-    imageUrl: project3,
+    githubLink: 'https://github.com/syjem/nextjs-dashboard',
+    previewLink: 'https://nextjs-dashboard-syjem.vercel.app/',
   },
 ] as const;
 
